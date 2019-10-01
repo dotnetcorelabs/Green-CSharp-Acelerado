@@ -1,13 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29324.140
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01", "01", "{D0BC88A1-91D3-49CD-A1CB-EFF8D4A3CFC3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01-ConsoleApp", "01\01-ConsoleApp\01-ConsoleApp.csproj", "{630B4DFD-1ADE-4A70-B581-02170CE5698F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-ConsoleApp-DI", "01\02-ConsoleApp-DI\02-ConsoleApp-DI.csproj", "{D7E409EC-D9E7-422D-9490-B29BC2A68D7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00", "00", "{4981A353-1E91-4F1C-91F3-B1076E6BB40B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.Calculadora", "00\ConsoleApp.Calculadora\ConsoleApp.Calculadora.csproj", "{DA714859-F179-422D-8562-18853727A625}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculadora.Domain", "00\Calculadora.Domain\Calculadora.Domain.csproj", "{970B6885-C8F2-4634-A274-9ADF79482649}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Automovel", "00\ConsoleApp.Automovel\ConsoleApp.Automovel.csproj", "{175849EA-E69A-4707-8139-A739AF56DC5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +31,18 @@ Global
 		{D7E409EC-D9E7-422D-9490-B29BC2A68D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7E409EC-D9E7-422D-9490-B29BC2A68D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7E409EC-D9E7-422D-9490-B29BC2A68D7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA714859-F179-422D-8562-18853727A625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA714859-F179-422D-8562-18853727A625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA714859-F179-422D-8562-18853727A625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA714859-F179-422D-8562-18853727A625}.Release|Any CPU.Build.0 = Release|Any CPU
+		{970B6885-C8F2-4634-A274-9ADF79482649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{970B6885-C8F2-4634-A274-9ADF79482649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{970B6885-C8F2-4634-A274-9ADF79482649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{970B6885-C8F2-4634-A274-9ADF79482649}.Release|Any CPU.Build.0 = Release|Any CPU
+		{175849EA-E69A-4707-8139-A739AF56DC5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{175849EA-E69A-4707-8139-A739AF56DC5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{175849EA-E69A-4707-8139-A739AF56DC5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{175849EA-E69A-4707-8139-A739AF56DC5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +50,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{630B4DFD-1ADE-4A70-B581-02170CE5698F} = {D0BC88A1-91D3-49CD-A1CB-EFF8D4A3CFC3}
 		{D7E409EC-D9E7-422D-9490-B29BC2A68D7F} = {D0BC88A1-91D3-49CD-A1CB-EFF8D4A3CFC3}
+		{DA714859-F179-422D-8562-18853727A625} = {4981A353-1E91-4F1C-91F3-B1076E6BB40B}
+		{970B6885-C8F2-4634-A274-9ADF79482649} = {4981A353-1E91-4F1C-91F3-B1076E6BB40B}
+		{175849EA-E69A-4707-8139-A739AF56DC5E} = {4981A353-1E91-4F1C-91F3-B1076E6BB40B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {25D189C7-E3F2-4B4C-874E-1EE0C5112C5E}
