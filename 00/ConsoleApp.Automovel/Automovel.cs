@@ -8,7 +8,7 @@ namespace ConsoleApp.Automovel
     {
         private int velocidade;
 
-        protected virtual void Acelerar(int aceleracao)
+        public virtual void Acelerar(int aceleracao)
         {
             int novaVelocidade = GetVelocidadeAtual() + aceleracao;
             SetVelocidadeAtual(novaVelocidade);
@@ -19,7 +19,7 @@ namespace ConsoleApp.Automovel
             return velocidade;
         }
 
-        public void SetVelocidadeAtual(int novaVelocidade)
+        protected void SetVelocidadeAtual(int novaVelocidade)
         {
             velocidade = novaVelocidade;
         }

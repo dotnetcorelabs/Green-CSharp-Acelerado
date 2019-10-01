@@ -6,7 +6,7 @@ namespace ConsoleApp.Automovel
 {
     public class Motocicleta : Automovel
     {
-        protected override void Acelerar(int aceleracao)
+        public override void Acelerar(int aceleracao)
         {
             SetVelocidadeAtual(GetVelocidadeAtual() + aceleracao + 2);
         }

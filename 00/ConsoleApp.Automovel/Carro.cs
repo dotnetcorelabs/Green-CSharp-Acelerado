@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp.Automovel
 {
-    class Carro : Automovel
+    public class Carro : Automovel
     {
     }
 }
