@@ -6,12 +6,20 @@ namespace ConsoleAPp
 {
     class Program
     {
-        static readonly Calculadora _calculadora = new Calculadora();
+        static Calculadora _calculadora = new Calculadora();
 
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World - Calculadora");
+            
+            // ConsoleAPp.Program.DisplayInfo();
+            //Program.DisplayInfo();
+
             DisplayInfo();
+
+
+            //Program.Main(args);
+            
 
             string lineArgument = Console.ReadLine();
             do
@@ -39,7 +47,7 @@ namespace ConsoleAPp
             while (lineArgument != "q");
         }
 
-        static void Soma(string[] args)
+        private static void Soma(string[] args)
         {
             string arg1 = GetArgumento(args, "operador1");
             decimal valor = decimal.Parse(arg1);
@@ -74,7 +82,7 @@ namespace ConsoleAPp
             return string.Empty;
         }
 
-        static void DisplayInfo()
+        public static void DisplayInfo()
         {
             Console.WriteLine("Escolha um dos operações.");
 
@@ -93,6 +101,7 @@ namespace ConsoleAPp
     {
         public Calculadora()
         {
+            Program.DisplayInfo();
         }
 
         public decimal Somar(decimal valor, decimal valor2)
