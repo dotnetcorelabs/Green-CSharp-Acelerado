@@ -14,7 +14,6 @@ namespace ConsoleApp_DI
             serviceCollection.AddLogging(cfg =>
             {
                 cfg.AddConsole();
-                cfg.AddDebug();
             });
 
             serviceCollection.AddTransient<Calculadora>();
