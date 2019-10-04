@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Basico02
 {
-    class _06Indexers
+    public class _06Indexers
     {
         private readonly List<string> nomes = new List<string>()
         {
