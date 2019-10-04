@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Basico
 {
@@ -27,6 +28,18 @@ namespace Basico
             byte vByte = 12;
             float vFloat1 = vByte;
             double vDouble = vFloat1;
+
+            decimal din = 100m;
+            din = 12.4m;
+            float din2 = 12f;
+            din2 = 12.3f;
+
+
+
+            double din3 = 12d;
+            din3 = 12;
+            din3 = 12.3;
+
         }
 
         public void ExecutaCasting()
@@ -34,19 +47,35 @@ namespace Basico
             int a;
             long b = 5;
             a = (int)b;
+
             // Explicit conversion of long to int. 
+
+            //nao pode
+            //int number = (int)"ekekeke";
         }
 
         public void ExecutaConvert()
         {
             string possibleInt = "1234";
             int count = Convert.ToInt32(possibleInt);
+
+            
+        }
+
+        void ParseComRegex()
+        {
+            string semLetrasRegex = Regex.Replace("123d",
+                                                  @"\w",
+                                                  "",
+                                                  RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Multiline | RegexOptions.RightToLeft | RegexOptions.Singleline);
+            int number = Convert.ToInt32(semLetrasRegex);
         }
 
         public void ExecutaTryParse()
         {
             int number = 0;
             string numberString = "1234";
+
             if (int.TryParse(numberString, out number))
             {
                 // Conversion succeeded, number now equals 1234. 

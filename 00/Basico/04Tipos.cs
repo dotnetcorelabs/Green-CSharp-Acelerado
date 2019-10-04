@@ -11,9 +11,15 @@ namespace Basico
         /// </summary>
         private int numeroInteiro;
 
+        private Int32 numeroInteiro2;
+
         private long numeroInteiroLongo;
 
+        private Int64 numeroInteiroLongo2;
+
         private string texto;
+
+        private String texto2;
 
         private decimal monetaryValues;
 

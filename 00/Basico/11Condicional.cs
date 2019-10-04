@@ -29,10 +29,24 @@ namespace Basico
             }
         }
 
+        void LoopRemovendo()
+        {
+            List<string> nomeList = new List<string>()
+            {
+                "nome1",
+                "nome2",
+                "nome3"
+            };
+            for (int i = nomeList.Count - 1; i >= 0; i--)
+            {
+                nomeList.RemoveAt(i);
+            }
+        }
+
         public void LoopForeach()
         {
-            string[] nome = new string[] { "Ricardo", "Ricardo2", "Ricardo3" };
-            foreach (var n in nome)
+            string[] nomes = new string[] { "Ricardo", "Ricardo2", "Ricardo3" };
+            foreach (string n in nomes)
             {
                 Console.WriteLine(n);
             }

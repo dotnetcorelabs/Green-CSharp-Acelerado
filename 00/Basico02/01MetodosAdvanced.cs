@@ -23,6 +23,16 @@ namespace Basico02
             //...
         }
 
+        void StopService(string serviceName, int numero)
+        {
+            //...
+        }
+
+        void StopService(int numero, string serviceName)
+        {
+            //...
+        }
+
         void StopService(int serviceId)
         {
             //...

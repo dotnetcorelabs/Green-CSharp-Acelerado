@@ -22,4 +22,22 @@ namespace Basico
 
         }
     }
+
+    class AcessoADados
+    {
+        //codigo magico de acesso a dados
+
+        private AcessoADados()
+        { }
+
+        static AcessoADados _instacia;
+
+        public static AcessoADados GetInstancia()
+        {
+            if (_instacia == null)
+                _instacia = new AcessoADados();
+
+            return _instacia;
+        }
+    }
 }
