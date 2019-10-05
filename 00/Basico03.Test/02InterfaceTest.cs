@@ -10,8 +10,13 @@ namespace Basico03.Test
         [Fact]
         public void TestInterface()
         {
-            ICarro veiculo = new FordKa();
+            BMW carroBMW = new BMW();
+            carroBMW.CoisaEspertaBMW = 10;
+            carroBMW.Andar();
+
+            ICarro veiculo = new BMW();
             veiculo.Andar();
+            
 
             Assert.NotNull(veiculo);
 

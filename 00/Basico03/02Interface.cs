@@ -23,15 +23,31 @@ namespace Basico03
 
     public class FordKa : ICarro
     {
-        //Necessario implmenetar interface
+        public string ChassiFordMarcas { get; set; }
+
         public void Andar()
         {
-            //alguma implementacao
+            throw new NotImplementedException();
         }
 
         public void Estacionar()
         {
-            //alguma implementacao
+            throw new NotImplementedException();
+        }
+    }
+
+    public class BMW : ICarro
+    {
+        public int CoisaEspertaBMW { get; set; }
+
+        public void Andar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Estacionar()
+        {
+            throw new NotImplementedException();
         }
     }
 }

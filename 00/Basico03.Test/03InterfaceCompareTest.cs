@@ -13,6 +13,8 @@ namespace Basico03.Test
         public void TestCompare()
         {
             List<Coffee> coffies = new List<Coffee>();
+
+
             coffies.Add(new Coffee() { AverageRating = 10, Variety = "preto" });
             coffies.Add(new Coffee() { AverageRating = 10, Variety = "marrom" });
             coffies.Add(new Coffee() { AverageRating = 10, Variety = "chantily" });

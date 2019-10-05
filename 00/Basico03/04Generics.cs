@@ -36,36 +36,27 @@ namespace Basico03
     /// Referencia: https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/keywords/where-generic-type-constraint
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class CustomListVeiculos<T>
-        where T : IVeiculo
+    public class SuperCarro<T>
+        where T : class, IVeiculo, new()
     {
-        private readonly List<T> internalList = new List<T>();
+        public T Item { get; private set; }
 
-        public T this[int index]
+        public void Adicionar(T @value)
         {
-            get { return internalList[index]; }
-            set { internalList[index] = value; }
+            Item = @value;
         }
 
-        public void Add(T item)
+        public IVeiculo CriarInstancia()
         {
-            // Method logic goes here.
-            internalList.Add(item);
+            T instancia = new T();
+            return instancia;
         }
 
-
-        public void Remove(T item)
+        public void AndarComTurbo()
         {
-            // Method logic goes here.
-            internalList.Remove(item);
-        }
-
-        public void AndarTodos()
-        {
-            foreach (var item in internalList)
-            {
-                item.Andar();
-            }
+            Item.Andar();
+            Item.Andar();
+            Item.Andar();
         }
     }
 }

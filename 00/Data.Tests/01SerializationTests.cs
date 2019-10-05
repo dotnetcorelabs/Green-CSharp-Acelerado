@@ -1,5 +1,6 @@
 
 using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Json;
@@ -15,11 +16,15 @@ namespace Data.Tests
         {
             Veiculo veiculoSerialize = Veiculo.Default;
 
+            Type tipoVeiculo = typeof(Veiculo);
+
             XmlSerializer serializer = new XmlSerializer(typeof(Veiculo));
-            using (var stream = File.OpenWrite("c:\\temp\\xmlserializerTest.xml"))
+
+            using (Stream stream = File.OpenWrite("c:\\temp\\xmlserializerTest.xml"))
             {
                 serializer.Serialize(stream, veiculoSerialize);
             }
+
 
             Assert.True(File.Exists("c:\\temp\\xmlserializerTest.xml"));
         }
@@ -105,7 +110,7 @@ namespace Data.Tests
         {
             Veiculo veiculoSerialize = Veiculo.Default;
 
-            using (var stream = File.OpenWrite("c:\\temp\\jsonNewtonSerializer.json"))
+            using (FileStream stream = File.OpenWrite("c:\\temp\\jsonNewtonSerializer.json"))
             using (StreamWriter writer = new StreamWriter(stream))
             {
                 writer.WriteLine(JsonConvert.SerializeObject(veiculoSerialize));
@@ -119,7 +124,6 @@ namespace Data.Tests
         {
             Veiculo veiculoSerialize = null;
 
-            DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(Veiculo));
             using (var stream = File.OpenRead("c:\\temp\\jsonNewtonSerializer.json"))
             using (StreamReader reader = new StreamReader(stream))
             {
@@ -128,6 +132,25 @@ namespace Data.Tests
 
             Assert.NotNull(veiculoSerialize);
             Assert.Equal(Veiculo.Default, veiculoSerialize);
+        }
+
+
+        [Fact]
+        public void BinaryRawTest()
+        {
+            using (var stream = File.OpenRead("c:\\temp\\pic.bmp"))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                int index = 0;
+                int count = 0;
+                int chunckSize = 64;
+
+                char[] buffer = new char[chunckSize];
+                while (reader.Peek() > 0)
+                {
+                    reader.ReadBlock(buffer, index, count);
+                }
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ namespace Basico02
 {
     class _05Colecoes
     {
+        #region ArrayList
         private ArrayList arrayList = new ArrayList();
         public void AddArrayList()
         {
@@ -18,6 +19,7 @@ namespace Basico02
             string nome = (string)arrayList[0];
             int number = (int)arrayList[1];
         }
+        #endregion ArrayList
 
         #region List
         private List<string> list = new List<string>();

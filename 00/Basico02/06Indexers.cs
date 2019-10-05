@@ -24,4 +24,34 @@ namespace Basico02
             }
         }
     }
+
+    public class Indexer2
+    {
+        private int idade = 10;
+        private int idade2 = 22;
+        private int idade3 = 33;
+
+        public int this[string nomePessoa]
+        {
+            get
+            {
+                if(nomePessoa == "nome1")
+                {
+                    return idade;
+                }
+                else if(nomePessoa == "nome2")
+                {
+                    return idade2;
+                }
+                else if(nomePessoa == "nome3")
+                {
+                    return idade3;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("nomePessoa");
+                }
+            }
+        }
+    }
 }
