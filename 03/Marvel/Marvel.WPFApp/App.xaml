@@ -1,0 +1,16 @@
+﻿<Application x:Class="Marvel.WPFApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Marvel.WPFApp"
+             StartupUri="MainWindow.xaml"
+             xmlns:converters="clr-namespace:Marvel.WPFApp.Converters">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <local:ViewModelLocator x:Key="vmLocator" />
+            <converters:ImageUrlConverter x:Key="imageConverter" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

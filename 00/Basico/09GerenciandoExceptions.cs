@@ -53,7 +53,7 @@ namespace Basico
             catch (ArgumentException argumentException)
             {
                 //tratar argument null exception
-                argumentException.Message
+                //argumentException.Message
             }
             catch (DirectoryNotFoundException directoryNotFound)
             {
