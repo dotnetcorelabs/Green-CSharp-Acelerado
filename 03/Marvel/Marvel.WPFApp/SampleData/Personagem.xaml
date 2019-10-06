@@ -1,9 +1,0 @@
-﻿<m:Personagem xmlns:m="clr-namespace:Marvel.Domain.Models;assembly=Marvel.Domain">
-    <m:Personagem.Id>1</m:Personagem.Id>
-    <m:Personagem.Descricao>Some Description</m:Personagem.Descricao>
-    <m:Personagem.Nome>Character 1</m:Personagem.Nome>
-    <m:Personagem.Thumbnail>
-        <m:Imagem Caminho="http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16/portrait_medium"
-                  Extencao=".jpg" />
-    </m:Personagem.Thumbnail>
-</m:Personagem>
