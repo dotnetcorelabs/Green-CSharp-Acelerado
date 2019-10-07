@@ -7,33 +7,46 @@
         mc:Ignorable="d"
         x:Name="mainW"
         DataContext="{Binding Main, Source={StaticResource vmLocator}}"
-        Title="{Binding PageTitle}" Height="450" Width="800" IsEnabled="False">
+        Title="{Binding PageTitle}" Height="560" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <StackPanel>
-            <TextBox Text="{Binding PageTitle, Mode=TwoWay}" IsEnabled="True" Height="50" Background="White" Foreground="Black" FontSize="18" />
-        </StackPanel>
-        <StackPanel Grid.Row="1">
-            <ListBox ItemsSource="{Binding Personagens}" ScrollViewer.HorizontalScrollBarVisibility="Auto">
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal" ScrollViewer.HorizontalScrollBarVisibility="Visible" />
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel>
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <Image Source="{Binding Thumbnail, Converter={StaticResource imageConverter}}" Style="{StaticResource Thumbnail}" />
-                            <TextBlock Text="{Binding Nome}" Style="{StaticResource Title}" Height="60" Width="250" TextWrapping="Wrap" />
-                            <TextBlock Text="{Binding Descricao}" Style="{StaticResource Descricao}" Height="250" Width="250" TextWrapping="Wrap" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </StackPanel>
+        <Grid Width="{Binding Width, ElementName=mainW}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="120" />
+            </Grid.ColumnDefinitions>
+            <TextBox Width="Auto" 
+                     Text="{Binding SearchString, Mode=TwoWay}" 
+                     IsEnabled="True" 
+                     Background="White" 
+                     Foreground="Black" 
+                     FontSize="22" />
+
+            <Button Content="Buscar" 
+                    Grid.Column="1"
+                    Width="100" 
+                    Command="{Binding BuscarCmd}" 
+                    CommandParameter="{Binding SearchString}" />
+        </Grid>
+        <ListBox Grid.Row="1" ItemsSource="{Binding Personagens, Mode=OneWay}" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" ScrollViewer.HorizontalScrollBarVisibility="Visible" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Image Source="{Binding Thumbnail, Converter={StaticResource imageConverter}}" Style="{StaticResource Thumbnail}" />
+                        <TextBlock Text="{Binding Nome}" Style="{StaticResource Title}" Height="30" Width="250" TextWrapping="Wrap" />
+                        <TextBlock Text="{Binding Descricao}" Style="{StaticResource Descricao}" Height="160" Width="250" TextWrapping="Wrap" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 
 </Window>

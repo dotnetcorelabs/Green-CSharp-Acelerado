@@ -57,6 +57,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Commands\RelayCommand_.cs" />
     <Compile Include="Converters\ImageUrlConverter.cs" />
     <Compile Include="Helpers\DesignHelper.cs" />
     <Compile Include="Repositorios\MarvelHttp\MarvelHttpService.cs" />

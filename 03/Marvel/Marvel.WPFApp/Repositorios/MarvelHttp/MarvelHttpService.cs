@@ -32,7 +32,8 @@ namespace Marvel.WPFApp.Repositorios
         {
             logger.LogInformation("Getting characters with SearchString {SEARCH_STRING} and limit {LIMIT}", searchString, limit);
 
-            using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "/api/characters"))
+            string path = searchString == null ? "/api/characters" : $"/api/characters?searchString={searchString}";
+            using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, path))
             {
                 request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
