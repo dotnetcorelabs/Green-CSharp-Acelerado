@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,11 @@ namespace ConsoleApp_DI
 {
     public class Calculadora
     {
-        public Calculadora()
+        private readonly ILogger<Calculadora> logger;
+
+        public Calculadora(ILogger<Calculadora> logger)
         {
+            this.logger = logger;
         }
 
         public decimal Somar(decimal valor, decimal valor2)

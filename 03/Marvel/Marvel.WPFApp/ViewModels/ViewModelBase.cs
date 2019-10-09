@@ -21,7 +21,7 @@ namespace Marvel.WPFApp.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected bool Set<T>(ref T storage, T value, [CallerMemberName] String propertyName = null)
+        protected bool Set<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
         {
             if (object.Equals(storage, value)) return false;
 

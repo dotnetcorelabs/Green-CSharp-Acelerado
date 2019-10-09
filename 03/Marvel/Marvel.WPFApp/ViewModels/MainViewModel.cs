@@ -14,12 +14,20 @@ namespace Marvel.WPFApp.ViewModels
     public class MainViewModel : ViewModelBase
     {
         private string pageTitle;
-        public string PageTitle { get { return pageTitle; } set { Set(ref pageTitle, value); } }
+        public string PageTitle
+        {
+            get { return pageTitle; }
+            set { Set(ref pageTitle, value); }
+        }
 
         private readonly IPersonagemRepositorio personagemRepositorio;
 
         private ObservableCollection<Personagem> personagens;
-        public ObservableCollection<Personagem> Personagens { get { return personagens; } set { Set(ref personagens, value); } }
+        public ObservableCollection<Personagem> Personagens
+        {
+            get { return personagens; }
+            set { Set<ObservableCollection<Personagem>>(ref personagens, value); }
+        }
 
         private string searchString;
         public string SearchString { get { return searchString; } set { Set(ref searchString, value); } }
@@ -56,7 +64,7 @@ namespace Marvel.WPFApp.ViewModels
 
         async Task LoadAsync(string searchString = null)
         {
-            var personagensHttp = await personagemRepositorio.GetCharacters(searchString);
+            IReadOnlyList<Personagem> personagensHttp = await personagemRepositorio.GetCharacters(searchString);
             Personagens = new ObservableCollection<Personagem>();
             foreach (var item in personagensHttp)
             {

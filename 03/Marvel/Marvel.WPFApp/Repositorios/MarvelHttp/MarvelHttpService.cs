@@ -39,12 +39,12 @@ namespace Marvel.WPFApp.Repositorios
 
                 try
                 {
-                    var responseStream = await client.SendAsync(request, cancellationToken);
+                    HttpResponseMessage responseStream = await client.SendAsync(request, cancellationToken);
 
                     if (responseStream.IsSuccessStatusCode)
                     {
-                        var responseText = await responseStream.Content.ReadAsStringAsync();
-                        var response = JsonConvert.DeserializeObject<List<Personagem>>(responseText);
+                        string responseText = await responseStream.Content.ReadAsStringAsync();
+                        List<Personagem> response = JsonConvert.DeserializeObject<List<Personagem>>(responseText);
 
                         return response;
                     }

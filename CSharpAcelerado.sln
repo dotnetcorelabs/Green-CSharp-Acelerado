@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29326.143
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01", "01", "{D0BC88A1-91D3-49CD-A1CB-EFF8D4A3CFC3}"
 EndProject
@@ -46,6 +46,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Calculadora", "Calculadora", "{60C0D438-A970-4B8C-A229-A8C6A5917A63}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculadora", "03\Calculadora\Calculadora.csproj", "{D3E50A35-E640-4AF0-99A3-1FFCECBB7FE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraNova", "CalculadoraNova\CalculadoraNova.csproj", "{8DE86A12-D4D1-436A-AD4D-493364065DA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraWPF", "CalculadoraWPF\CalculadoraWPF.csproj", "{914CADCC-D956-445D-B210-B358662BEA6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Threads", "ConsoleApp.Threads\ConsoleApp.Threads.csproj", "{3D571243-A55C-41CA-A0E1-BDD0572270AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +123,18 @@ Global
 		{D3E50A35-E640-4AF0-99A3-1FFCECBB7FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3E50A35-E640-4AF0-99A3-1FFCECBB7FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3E50A35-E640-4AF0-99A3-1FFCECBB7FE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DE86A12-D4D1-436A-AD4D-493364065DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DE86A12-D4D1-436A-AD4D-493364065DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DE86A12-D4D1-436A-AD4D-493364065DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DE86A12-D4D1-436A-AD4D-493364065DA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{914CADCC-D956-445D-B210-B358662BEA6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{914CADCC-D956-445D-B210-B358662BEA6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{914CADCC-D956-445D-B210-B358662BEA6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{914CADCC-D956-445D-B210-B358662BEA6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D571243-A55C-41CA-A0E1-BDD0572270AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D571243-A55C-41CA-A0E1-BDD0572270AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D571243-A55C-41CA-A0E1-BDD0572270AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D571243-A55C-41CA-A0E1-BDD0572270AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -140,6 +158,9 @@ Global
 		{F013D40F-63F0-4F10-9DF0-C2C7E4D84CA6} = {31E1C69E-92B3-4746-96D6-C002FDDEEEBB}
 		{60C0D438-A970-4B8C-A229-A8C6A5917A63} = {0A98C188-0848-47F4-8D6F-118C1BC60921}
 		{D3E50A35-E640-4AF0-99A3-1FFCECBB7FE6} = {60C0D438-A970-4B8C-A229-A8C6A5917A63}
+		{8DE86A12-D4D1-436A-AD4D-493364065DA6} = {60C0D438-A970-4B8C-A229-A8C6A5917A63}
+		{914CADCC-D956-445D-B210-B358662BEA6A} = {60C0D438-A970-4B8C-A229-A8C6A5917A63}
+		{3D571243-A55C-41CA-A0E1-BDD0572270AE} = {D0BC88A1-91D3-49CD-A1CB-EFF8D4A3CFC3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {25D189C7-E3F2-4B4C-874E-1EE0C5112C5E}

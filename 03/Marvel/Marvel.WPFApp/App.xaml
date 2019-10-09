@@ -6,10 +6,15 @@
              xmlns:converters="clr-namespace:Marvel.WPFApp.Converters">
     <Application.Resources>
         <ResourceDictionary>
+            
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            
+            
             <local:ViewModelLocator x:Key="vmLocator" />
+            
+            
             <converters:ImageUrlConverter x:Key="imageConverter" />
         </ResourceDictionary>
     </Application.Resources>

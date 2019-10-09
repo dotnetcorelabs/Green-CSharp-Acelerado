@@ -11,12 +11,14 @@ namespace ConsoleApp_DI
         static IServiceProvider ConfigureServices()
         {
             var serviceCollection = new ServiceCollection();
+
             serviceCollection.AddLogging(cfg =>
             {
                 cfg.AddConsole();
             });
 
             serviceCollection.AddTransient<Calculadora>();
+
             return serviceCollection.BuildServiceProvider();
         }
 
@@ -60,8 +62,8 @@ namespace ConsoleApp_DI
             string arg2 = GetArgumento(args, "operador2");
             decimal valor2 = decimal.Parse(arg2);
 
-            
-            var calc = _serviceProvider.GetRequiredService<Calculadora>();
+
+            Calculadora calc = _serviceProvider.GetRequiredService<Calculadora>();
             var resultado = calc.Somar(valor, valor2);
 
             var logger = _serviceProvider.GetRequiredService<ILogger<Program>>();
