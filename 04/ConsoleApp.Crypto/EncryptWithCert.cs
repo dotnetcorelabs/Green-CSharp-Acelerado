@@ -28,10 +28,14 @@ namespace ConsoleApp.Crypto
             // Decrypt the file using the private key from the certificate. 
             string decryptedText = DecryptFile(encryptedText, privateKey);
 
+            Console.WriteLine();
+            
             //Display the original data and the decrypted data. 
             Console.WriteLine("Original:   {0}", plainText);
             Console.WriteLine("Encrypted:  {0}", encryptedText);
             Console.WriteLine("Decrypted:  {0}", decryptedText);
+
+            Console.WriteLine();
         }
 
         private static X509Certificate2 GetCertificateFromStore(string certName)

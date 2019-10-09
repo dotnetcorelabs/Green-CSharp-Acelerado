@@ -20,18 +20,15 @@ namespace ConsoleApp.Crypto
             string @string = "Super string master blaster!!!!";
             Console.WriteLine($"One way Hash MD5 {ComputeHashMD5(@string)}");
 
+            Console.WriteLine();
+
             string encrypted = EncrypHMAC(planText, "HAHAHAHAHAHAHAHAHA");
             Console.WriteLine($"EncrypHMAC {encrypted}");
 
-
+            Console.WriteLine();
 
             //Create a UnicodeEncoder to convert between byte array and string.
             UnicodeEncoding ByteConverter = new UnicodeEncoding();
-
-            //Create byte arrays to hold original, encrypted, and decrypted data.
-            byte[] dataToEncrypt = ByteConverter.GetBytes("Data to Encrypt");
-            byte[] encryptedData;
-            byte[] decryptedData;
 
             //Create a new instance of RSACryptoServiceProvider to generate
             //public and private key data.
@@ -40,16 +37,21 @@ namespace ConsoleApp.Crypto
                 //Pass the data to ENCRYPT, the public key information 
                 //(using RSACryptoServiceProvider.ExportParameters(false),
                 //and a boolean flag specifying no OAEP padding.
-                encryptedData = RSAEncrypt(dataToEncrypt, RSA.ExportParameters(false), false);
+                var encryptedData = RSAEncrypt(ByteConverter.GetBytes("Data to Encrypt"), RSA.ExportParameters(false), false);
+
+                Console.WriteLine("Encrypted plaintext: {0}", ByteConverter.GetString(encryptedData));
 
                 //Pass the data to DECRYPT, the private key information 
                 //(using RSACryptoServiceProvider.ExportParameters(true),
                 //and a boolean flag specifying no OAEP padding.
-                decryptedData = RSADecrypt(encryptedData, RSA.ExportParameters(true), false);
+                var decryptedData = RSADecrypt(encryptedData, RSA.ExportParameters(true), false);
 
                 //Display the decrypted plaintext to the console. 
                 Console.WriteLine("Decrypted plaintext: {0}", ByteConverter.GetString(decryptedData));
+                Console.WriteLine();
             }
+
+            Console.ReadKey();
         }
 
         static string ComputeHashMD5(string input)
