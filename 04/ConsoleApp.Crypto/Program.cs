@@ -27,7 +27,8 @@ namespace ConsoleApp.Crypto
             EncryptWithCert encryptWithCert = new EncryptWithCert();
             encryptWithCert.Run();
 
-            return;
+            Console.ReadKey();
+            //return;
 
             
 
