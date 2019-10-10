@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\rmauro\source\repos\dotnetcorelabs\Green-CSharp-Acelerado\ConsoleApp.EntityFramework\DataModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Admin\source\repos\Green-CSharp-Acelerado\04\ConsoleApp.EntityFramework\DbModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

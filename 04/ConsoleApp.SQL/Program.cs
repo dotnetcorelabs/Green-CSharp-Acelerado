@@ -9,12 +9,11 @@ namespace ConsoleApp.SQL
 {
     class Program
     {
-        static readonly string _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=db001;Integrated Security=True;Pooling=False";
+        static readonly string _connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=xhuxhu;Integrated Security=True;Pooling=False";
 
         static void Main(string[] args)
         {
             Console.WriteLine("ADO.NET - Hello World!");
-
 
             Dictionary<Guid, string> registros = new Dictionary<Guid, string>()
             {
@@ -64,7 +63,33 @@ namespace ConsoleApp.SQL
                         }
                     }
 
-                    if(conn.State != ConnectionState.Closed)
+                    if (conn.State != ConnectionState.Closed)
+                        conn.Close();
+                }
+            }
+        }
+
+        private static void MostrarRegistros2()
+        {
+            using (var conn = SqlClientFactory.Instance.CreateConnection())
+            {
+                conn.ConnectionString = _connectionString;
+
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT Id, Nome FROM Contato";
+
+                    conn.Open();
+
+                    DataTable dt = new DataTable();
+                    dt.Load(cmd.ExecuteReader(CommandBehavior.CloseConnection));
+
+                    string id = dt.Rows[0]["Id"].ToString();
+                    string nome = dt.Rows[0]["Nome"].ToString();
+
+                    Console.WriteLine($"Id {id} Nome {nome}");
+
+                    if (conn.State != ConnectionState.Closed)
                         conn.Close();
                 }
             }
@@ -105,12 +130,14 @@ namespace ConsoleApp.SQL
 
         static void CriarRegistro(Guid id, string nome)
         {
-            using (var conn = SqlClientFactory.Instance.CreateConnection())
+            using (DbConnection conn = SqlClientFactory.Instance.CreateConnection())
             {
                 conn.ConnectionString = _connectionString;
 
-                using (var cmd = conn.CreateCommand())
+                using (DbCommand cmd = conn.CreateCommand())
                 {
+                    cmd.CommandType = CommandType.Text;
+
                     cmd.CommandText = @"INSERT INTO [Contato]
                         (
                             Id,
@@ -122,7 +149,7 @@ namespace ConsoleApp.SQL
                             @PARAM_NOME
                         )";
 
-                    var paramId = cmd.CreateParameter();
+                    DbParameter paramId = cmd.CreateParameter();
                     paramId.ParameterName = "PARAM_ID";
                     paramId.Direction = ParameterDirection.Input;
                     paramId.DbType = DbType.String;
@@ -131,7 +158,7 @@ namespace ConsoleApp.SQL
                     cmd.Parameters.Add(paramId);
 
 
-                    var paramNome = cmd.CreateParameter();
+                    DbParameter paramNome = cmd.CreateParameter();
                     paramNome.ParameterName = "PARAM_NOME";
                     paramNome.Direction = ParameterDirection.Input;
                     paramNome.DbType = DbType.String;

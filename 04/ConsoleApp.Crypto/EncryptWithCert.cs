@@ -15,7 +15,7 @@ namespace ConsoleApp.Crypto
             string encryptedText = string.Empty;
 
             // Get the certifcate to use to encrypt the key. 
-            X509Certificate2 cert = GetCertificateFromStore("CN=CERT_SIGN_TEST_CERT");
+            X509Certificate2 cert = GetCertificateFromStore("CN=localhost");
             if (cert == null)
                 throw new Exception("Certificate 'CN=CERT_SIGN_TEST_CERT' not found.");
 

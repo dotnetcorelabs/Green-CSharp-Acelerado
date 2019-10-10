@@ -12,13 +12,24 @@ namespace ConsoleApp.Crypto
         {
             Console.WriteLine("Hello World!");
 
-            string planText = "text to encryp";
+
+            //string @string = "Super string master blaster!!!!";
+            //Console.WriteLine($"Plain text          {@string}");
+            //Console.WriteLine($"One way Hash MD5    {ComputeHashMD5(@string)}");
+
+            //Console.ReadKey();
+            //return;
+
+
+
+            string planText = "text to encrypt";
 
             EncryptWithCert encryptWithCert = new EncryptWithCert();
             encryptWithCert.Run();
 
-            string @string = "Super string master blaster!!!!";
-            Console.WriteLine($"One way Hash MD5 {ComputeHashMD5(@string)}");
+            return;
+
+            
 
             Console.WriteLine();
 
@@ -58,7 +69,9 @@ namespace ConsoleApp.Crypto
         {
             using (var md5Hash = MD5.Create())
             {
-                byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+                byte[] rawStringBytes = Encoding.UTF8.GetBytes(input);
+
+                byte[] data = md5Hash.ComputeHash(rawStringBytes);
 
                 StringBuilder sBuilder = new StringBuilder();
 
